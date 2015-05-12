@@ -849,7 +849,7 @@ def _parse_datetime_iso_match(date_match, tz=None):
     else:
         # we only get the most significant 6 digits because that's what
         # datetime can handle.
-        usec = int(round(float(usec) * 1e6))
+        usec = int(float(usec) * 1e6)
 
     return datetime(year, month, day, hour, min, sec, usec, tz)
 
