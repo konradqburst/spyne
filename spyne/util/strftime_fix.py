@@ -64,7 +64,7 @@ def strftime(dt, fmt):
     syear = "%4d" % (dt.year,)
     for site in sites:
         s = s[:site] + syear + s[site+4:]
-    return s
+    return s.strip()
 
 # Make sure that the day names are in order
 # from 1/1/1 until August 2000
