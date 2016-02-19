@@ -85,6 +85,7 @@ from spyne.model.binary import Attachment # DEPRECATED
 from spyne.util import DefaultAttrDict, memoize_id, six
 
 from spyne.util.cdict import cdict
+from spyne.util.strftime_fix import strftime
 
 
 class ProtocolBase(object):
@@ -864,7 +865,7 @@ def _datetime_to_string(cls, value):
     if format is None:
         ret_str = value.isoformat()
     else:
-        ret_str = value.strftime(format)
+        ret_str = strftime(value, format)
 
     string_format = cls.Attributes.string_format
     if string_format is None:
